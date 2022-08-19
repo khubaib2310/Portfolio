@@ -36,6 +36,7 @@ nav {
 
 .nav-logo img {
   width: 158px;
+  cursor: pointer;
 }
 .nav-left ul li {
   /* list-style: none;
@@ -105,7 +106,7 @@ nav {
   display: flex;
   justify-content: space-between;
   padding: 13px 5%;
-  border: 2px solid purple;
+  /* border: 2px solid purple; */
 }
 
 .home-page {
@@ -116,7 +117,7 @@ nav {
   /* left: 29px; */
   font-family: "Oswald", sans-serif;
   width: 100%;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   /* height: 1%; */
   margin-left: 35px;
   /* align-items: flex-start;
@@ -126,6 +127,8 @@ nav {
   height: 100%;
   justify-content: flex-start;
   margin: 0 2rem; */
+
+  /* z-index: -1; */
 }
 .first-slide {
   display: flex;
@@ -217,7 +220,7 @@ nav {
   padding: 13px 5%;
   align-items: center;
   justify-content: center;
-  border: 2px solid green;
+  /* border: 2px solid green; */
   font-family: "Oswald", sans-serif;
   flex-direction: column;
 }
@@ -272,7 +275,7 @@ nav {
   padding: 13px 5%;
   align-items: center;
   justify-content: center;
-  border: 2px solid #80007c;
+  /* border: 2px solid #80007c; */
   font-family: "Oswald", sans-serif;
   flex-direction: column;
 }
@@ -301,7 +304,7 @@ nav {
   font-family: "Oswald", sans-serif;
   color: yellow;
   flex-direction: column;
-  border: 2px solid black;
+  /* border: 2px solid black; */
 }
 
 .contact-me {
@@ -320,6 +323,7 @@ nav {
   font-family: cursive;
   color: #111010;
   margin: 20px 20px;
+  font-weight: bold;
 }
 
 .contact-form {
@@ -331,7 +335,7 @@ nav {
   font-family: "Oswald", sans-serif;
   color: yellow;
   flex-direction: column;
-  border: 2px solid rgb(6, 30, 138);
+  /* border: 2px solid rgb(6, 30, 138); */
 }
 
 .form {
@@ -353,6 +357,7 @@ nav {
   height: 48px;
   padding: 0.95rem;
   outline: none;
+  font-weight: bold;
 }
 
 .form textarea {
@@ -363,6 +368,7 @@ nav {
   border-radius: 9px;
   padding: 0.95rem;
   outline: none;
+  font-weight: bold;
 }
 
 .form-button {
@@ -406,6 +412,96 @@ nav {
   background-color: #525753;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+
+.burger-menu {
+  background-color: #fff;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  display: none;
+  transition: 0.9s ease;
+  position: fixed;
+  background: #8080806b;
+  backdrop-filter: blur(4px);
+  /* transition: all 3s ease-in; */
+  animation-name: harry1;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+
+  z-index: 1;
+}
+
+@keyframes harry1 {
+  from {
+    height: 180px;
+  }
+  to {
+    height: 100vh;
+  }
+}
+
+.cross {
+  display: none;
+}
+
+.burger-menu ul {
+  padding-top: 1rem;
+  list-style: none;
+  margin-right: 5rem;
+}
+.burger-menu ul li {
+  padding: 1.5rem 0;
+  margin-left: 48px;
+  font-family: "DynaPuff", cursive;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 4px;
+
+  transition: all 0.5s ease;
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1;
+  font-size: 17px;
+  background-color: transparent;
+  outline: none;
+
+  animation-name: harry2;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes harry2 {
+  from {
+    height: 0px;
+  }
+  to {
+    height: 80px;
+  }
+}
+
+.burger-menu ul li:hover {
+  color: #0d2f96e0;
+  /* background-color: rgba(255, 253, 253, 0.103); */
+  background-color: rgb(255 253 253 / 13%);
+}
+
+i {
+  font-size: 30px;
+}
+
+.burger {
+  background: transparent;
+  border: 0;
+}
+
+.cross {
+  background: transparent;
+  border: 0;
 }
 
 /* ------- Responsive ------  */
@@ -521,8 +617,12 @@ nav {
     padding: 0;
     margin: 0 20px;
     transition: 1s ease;
-    /* display: none; 
+    display: none; 
   } */
+
+  .nav-left {
+    display: none;
+  }
 
   .nav-left ul li {
     display: none;
@@ -537,6 +637,14 @@ nav {
   }
   .photo img {
     width: 300px;
+  }
+
+  .nav-main {
+    display: none;
+  }
+
+  .user-icon img {
+    display: none;
   }
 }
 
@@ -604,5 +712,9 @@ nav {
 
   .contact-me a {
     margin: 19px 5px;
+  }
+
+  .nav-right {
+    display: none;
   }
 }
