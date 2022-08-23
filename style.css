@@ -497,6 +497,7 @@ i {
 .burger {
   background: transparent;
   border: 0;
+  display: none;
 }
 
 .cross {
